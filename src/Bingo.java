@@ -8,6 +8,8 @@
  *
  * @author Joe
  */
+import javax.swing.*;
+import java.awt.*;
 public class Bingo {
 
     /**
@@ -15,6 +17,11 @@ public class Bingo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println(Constants.IMGDIR);
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(3);
+        f.add(new JLabel(new ImageIcon(Constants.IMGDIR + "\\1.png")));
+        f.setVisible(true);
     }
     
 }
