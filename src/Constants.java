@@ -26,4 +26,18 @@ public class Constants {
             return "images";
         }
     }
+    public static char calcLetter(int n) {
+        if (n <= 15)
+            return 'B';
+        else if (n <= 30)
+            return 'I';
+        else if (n <= 45)
+            return 'N';
+        else if (n <= 60)
+            return 'G';
+        else 
+            return 'O';
+        
+    }
+            
 }
