@@ -1,12 +1,20 @@
 
+import java.awt.GridLayout;
 import java.util.*;
+import javax.swing.JPanel;
 
-public class BingoBoard {
+public class BingoBoard extends JPanel {
     
     BingoBoardCell[][] board;
     
     public BingoBoard() {
+        this.setLayout(new GridLayout(5,5));
         generateBoard();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                add(board[j][i]);
+            }
+        }
     }
             
     public void generateBoard() {

@@ -11,13 +11,13 @@
 import javax.swing.*;
 import java.awt.*;
 public class Bingo {
-
+    public static BingoGame game;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(Constants.IMGDIR);
+       /** System.out.println(Constants.IMGDIR);
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(3);
         //f.add(new JLabel(new ImageIcon(Constants.IMGDIR + "\\1.png")));
@@ -25,6 +25,8 @@ public class Bingo {
         f.setSize(500, 500);
         f.setLocationRelativeTo(null);
         f.setVisible(true);
+        **/
+        game = new BingoGame();
     }
     
 }
