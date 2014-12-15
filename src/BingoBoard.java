@@ -71,4 +71,31 @@ public class BingoBoard extends JPanel {
             board[4][i] = new BingoBoardCell(temp.remove(0));
         }
     }
+    
+        
+    public boolean determineIfWin() {
+        // Check Rows:        
+        for (int i = 0; i < 5; i++) {
+            if (board[i][0].isStamped() && board[i][1].isStamped() && board[i][2].isStamped() && board[i][3].isStamped() && board[i][4].isStamped()) {
+                return true;
+            }
+        }
+        
+        // Check Columns:
+        for (int i = 0; i < 5; i++) {
+            if (board[0][i].isStamped() && board[1][i].isStamped() && board[2][i].isStamped() && board[3][i].isStamped() && board[4][i].isStamped()) {
+                return true;
+            }
+        }
+        
+        // Check Diagonals:
+        if (board[0][0].isStamped() && board[1][1].isStamped() && board[2][2].isStamped() && board[3][3].isStamped() && board[4][4].isStamped()) {
+            return true;
+        }
+        
+        if (board[4][0].isStamped() && board[3][1].isStamped() && board[2][2].isStamped() && board[1][3].isStamped() && board[0][4].isStamped()) {
+            return true;
+        }
+        return false;
+    }
 }

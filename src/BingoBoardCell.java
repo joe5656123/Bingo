@@ -30,6 +30,10 @@ public class BingoBoardCell extends JButton {
        return Constants.calcLetter(number);
    }
    
+   public boolean isStamped() {
+       return getText().charAt(0) == 'X';
+   }
+   
    public class ClickListener implements ActionListener {
         private BingoBoardCell cell;
         public ClickListener (BingoBoardCell c) {
@@ -38,10 +42,10 @@ public class BingoBoardCell extends JButton {
         
         @Override
         public void actionPerformed(ActionEvent e) {
-            ArrayList<BingoBall> drawnBalls = Bingo.game.getDrawnBalls();
+            ArrayList<BingoBall> drawnBalls = Bingo.getGame().getDrawnBalls();
             for (BingoBall b : drawnBalls) {
-                if (cell.number == b.getNumber()) {
-                    this.cell.setText("X" + this.cell.getText() + "X");
+                if (cell.number == b.getNumber() && !cell.isStamped()) {
+                    this.cell.setText("X " + this.cell.getText() + " X");
                     break;
                 }
             }
